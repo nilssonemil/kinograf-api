@@ -1,0 +1,44 @@
+{:objects
+ {:Movie
+  {:description "Movie data."
+   :fields {:actors {:type String}
+            :awards {:type String}
+            :box_office {:type String}
+            :country {:type String}
+            :dvd {:type String}
+            :director {:type String}
+            :genre {:type String}
+            :language {:type String}
+            :metascore {:type String}
+            :plot {:type String}
+            :poster {:type String}
+            :production {:type String}
+            :rated {:type String}
+            :ratings {:type (list :Rating)}
+            :released {:type String}
+            :runtime {:type String}
+            :title {:type String}
+            :type {:type String}
+            :website {:type String}
+            :writer {:type String}
+            :year {:type String}
+            :imdb_id {:type String}
+            :imdb_rating {:type String}
+            :imdb_votes {:type String}}}
+
+  :Rating
+  {:descroption "Ratings data."
+   :fields {:source {:type String}
+            :value {:type String}}}}
+
+ :queries
+ {:movie_by_id
+  {:description "Access a Movie by its IMDb ID."
+   :type :Movie
+   :args {:id {:type String}}
+   :resolve :query/movie-by-id}
+  :movie_by_title
+  {:description "Access a Movie by its title."
+   :type (list :Movie)
+   :args {:title {:type String}}
+   :resolve :query/movie-by-title}}}
