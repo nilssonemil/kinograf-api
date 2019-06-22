@@ -1,13 +1,13 @@
-(ns kinograf-api.routes
+(ns kinograf.routes
   (:require [compojure.core :refer :all]
             [compojure.route :as route]
             [ring.middleware.json :refer [wrap-json-body wrap-json-response]]
             [ring.middleware.params :refer [wrap-params]]
             [ring.middleware.cors :refer [wrap-cors]]
-            [kinograf-api.errors :refer [bad-request page-not-found]]
-            [kinograf-api.handlers :refer [graphql-handler]]
-            [kinograf-api.middleware :refer [wrap-request-logger wrap-content-type]]
-            [kinograf-api.schema :refer [load-schema]]))
+            [kinograf.errors :refer [bad-request page-not-found]]
+            [kinograf.handlers :refer [graphql-handler]]
+            [kinograf.middleware :refer [wrap-request-logger wrap-content-type]]
+            [kinograf.schema :refer [load-schema]]))
 
 ;; GraphQL schema with attached resolvers.
 (def schema (load-schema))

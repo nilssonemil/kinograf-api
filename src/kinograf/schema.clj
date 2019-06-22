@@ -1,10 +1,10 @@
-(ns kinograf-api.schema
+(ns kinograf.schema
   (:require [clojure.java.io :as io]
             [clojure.tools.logging :as log]
             [clojure.edn :as edn]
             [com.walmartlabs.lacinia.util :as lacinia.util]
             [com.walmartlabs.lacinia.schema :as lacinia.schema]
-            [kinograf-api.resolver :as resolver]))
+            [kinograf.resolver :as resolver]))
 
 (defn resolver-map
   []

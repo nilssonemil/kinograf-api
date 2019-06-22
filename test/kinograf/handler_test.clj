@@ -1,7 +1,7 @@
-(ns kinograf-api.handler-test
+(ns kinograf.handler-test
   (:require [clojure.test :refer :all]
             [ring.mock.request :as mock]
-            [kinograf-api.handler :refer :all]))
+            [kinograf.handler :refer :all]))
 
 (deftest test-app
   (testing "main route"

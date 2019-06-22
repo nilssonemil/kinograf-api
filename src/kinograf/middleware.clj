@@ -1,4 +1,4 @@
-(ns kinograf-api.middleware
+(ns kinograf.middleware
   (:require [ring.util.response :as response]
             [clojure.tools.logging :as log]))
 

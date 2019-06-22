@@ -1,4 +1,4 @@
-(ns kinograf-api.handlers
+(ns kinograf.handlers
   (:require [com.walmartlabs.lacinia :as lacinia]
             [clojure.data.json :as json]
             [clojure.string :as str]

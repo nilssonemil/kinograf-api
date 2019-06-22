@@ -1,4 +1,4 @@
-(ns kinograf-api.errors)
+(ns kinograf.errors)
 
 ;; These functions provide response objects in the form of maps that can be
 ;; directly used as a response if converted to JSON.

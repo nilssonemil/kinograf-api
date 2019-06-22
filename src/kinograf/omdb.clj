@@ -1,4 +1,4 @@
-(ns kinograf-api.omdb
+(ns kinograf.omdb
   (:require [clojure.data.json :as json]
             [clojure.tools.logging :as log]
             [clojure.walk :as walk]

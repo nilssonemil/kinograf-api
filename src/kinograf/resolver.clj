@@ -1,6 +1,6 @@
-(ns kinograf-api.resolver
+(ns kinograf.resolver
   (:require [clojure.tools.logging :as log]
-            [kinograf-api.omdb :as omdb]))
+            [kinograf.omdb :as omdb]))
 
 (defn movie-by-id
   [context args value]
