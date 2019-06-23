@@ -1,8 +1,29 @@
 (ns kinograf.handlers
-  (:require [com.walmartlabs.lacinia :as lacinia]
+  (:require [buddy.auth :refer [authenticated?]]
             [clojure.data.json :as json]
             [clojure.string :as str]
-            [clojure.tools.logging :as log]))
+            [clojure.tools.logging :as log]
+            [com.walmartlabs.lacinia :as lacinia]
+            [kinograf.authentication :refer [create-token]]
+            [kinograf.database :as db]
+            [kinograf.errors :refer [bad-request forbidden]]))
+
+(defn create-user!
+  [request]
+  (let [data (:body request)
+        user (db/create-user! (:username data) (:password data))]
+    (if (not (nil? user))
+      {:status 201
+       :body {:user (dissoc user :password) ;; return everything but password
+              :token (create-token (:id user))}}
+      (bad-request "Could not create user."))))
+
+(defn get-token
+  [request]
+  (if-not (authenticated? request)
+    (forbidden)
+    {:status 200
+     :body {:token (create-token (:id (:identity request)))}}))
 
 (defn extract-query
   [request]

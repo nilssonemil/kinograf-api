@@ -1,0 +1,8 @@
+DROP TABLE IF EXISTS kinograf_user;
+
+CREATE TABLE kinograf_user(
+    id SERIAL PRIMARY KEY,
+    name VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(200) NOT NULL,
+    created_at TIMESTAMP NOT NULL DEFAULT LOCALTIMESTAMP
+);
